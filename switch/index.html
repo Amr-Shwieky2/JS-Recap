@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number Verification</title>
+</head>
+<body>
+    <h1>Number Verification</h1>
+    <p>Please enter number:</p>
+    <input type="number" id="ageInput">
+    <button onclick="checkNumber()">Verify</button>
+    <p id="result"></p>
+
+    <script>
+        function checkNumber(){
+            let number = parseInt(document.getElementById("ageInput").value);
+            
+            console.log(number % 2 == 0? document.getElementById("result").innerHTML = "even"
+             : 
+             document.getElementById("result").innerHTML ="odd");
+
+        }
+    </script>
+
+    
+</body>
+</html>

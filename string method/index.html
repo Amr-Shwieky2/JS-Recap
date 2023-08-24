@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>String Manipulation</title>
+</head>
+<body>
+    <h1>String Manipulation</h1>
+    <label for="sentence">Enter a sentence:</label>
+    <input type="text" id="sentence">
+    <button onclick="performManipulations()">Perform Manipulations</button>
+    <br>
+    <p><strong>Length of the sentence:</strong> <span id="length"></span></p>
+    <p><strong>Sentence in uppercase:</strong> <span id="uppercase"></span></p>
+    <p><strong>Sentence in lowercase:</strong> <span id="lowercase"></span></p>
+    <label for="startIndex">Enter starting index:</label>
+    <input type="number" id="startIndex">
+    <label for="subLength">Enter length:</label>
+    <input type="number" id="subLength">
+    <button onclick="getSubstring()">Get Substring</button>
+    <p><strong>Substring:</strong> <span id="substring"></span></p>
+    <label for="oldWord">Enter word to replace:</label>
+    <input type="text" id="oldWord">
+    <label for="newWord">Enter new word:</label>
+    <input type="text" id="newWord">
+    <button onclick="replaceWord()">Replace Word</button>
+    <p><strong>Modified sentence:</strong> <span id="modifiedSentence"></span></p>
+
+    <script>
+        function performManipulations() {
+            const sentence = document.getElementById('sentence').value;
+            document.getElementById('length').textContent = sentence.length;
+            document.getElementById('uppercase').textContent = sentence.toUpperCase();
+            document.getElementById('lowercase').textContent = sentence.toLowerCase();
+        }
+
+        function getSubstring() {
+            const sentence = document.getElementById('sentence').value;
+            const startIndex = parseInt(document.getElementById('startIndex').value);
+            const subLength = parseInt(document.getElementById('subLength').value);
+            document.getElementById('substring').textContent = sentence.substring(startIndex, startIndex + subLength);
+        }
+
+        function replaceWord() {
+            const sentence = document.getElementById('sentence').value;
+            const oldWord = document.getElementById('oldWord').value;
+            const newWord = document.getElementById('newWord').value;
+            const modifiedSentence = sentence.replace(oldWord, newWord);
+            document.getElementById('modifiedSentence').textContent = modifiedSentence;
+        }
+    </script>
+</body>
+</html>
