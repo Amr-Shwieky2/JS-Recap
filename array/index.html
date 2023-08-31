@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // store multiple values at a once
+      // name , squre bracket values , value may be in the same dattype and maybe in diffrent data type
+      const Students = ["dania", "mohammad", "omar", "ali"];
+      const numbers = [1, 2, 3, 4, 5, 6];
+      const values = [
+        "dania0",
+        0,
+        1,
+        false,
+        ["mohammad", 3, 2],
+        {
+          name: "dania",
+          age: 24,
+        },
+      ];
+
+      // now i want to get the data
+      //through index number
+      // array start with index 0
+      0, 1, 2, 3;
+      const teachers = ["dania", "mohammad", "omar", "ali"];
+      const firstName = teachers[0];
+
+      //array lenght
+      // number of elemnts inside the array // integer number
+
+      const arrayLenght = teachers.length;
+      console.log(arrayLenght);
+      //push(): Adds one or more elements to the end of an array.
+      teachers.push("eleen", "amal");
+      console.log(teachers);
+      //pop(): Removes the last element from an array and returns it.
+      teachers.pop();
+      console.log(teachers);
+      //shift(): Removes the first element from an array and returns it.
+      teachers.shift();
+      console.log(teachers);
+      //unshift(): Adds one or more elements to the beginning of an array.
+      teachers.unshift("dania", "hamza", 1);
+      console.log(teachers);
+      //slice
+      // Purpose: Used to create a shallow copy of a portion of an array.
+      // Immutability: Does not modify the original array.
+      // Syntax: arr.slice([begin[, end]])
+      // Returns: A new array containing the extracted elements.
+
+      const StudentsName = teachers.slice(1, 4);
+      console.log(StudentsName);
+
+      //splice
+      // Purpose: Used to add or remove items from an array.
+      // Immutability: Modifies the original array.
+      // Syntax: arr.splice(start[, deleteCount[, item1[, item2[, ...]]]])
+      // Returns: An array containing the deleted elements.
+
+      const newArray = teachers.splice(0, 2, "issa", 2);
+      console.log(newArray);
+      console.log(teachers);
+      //reverse(): Reverses the elements of an array.
+      const reverseTeachers = newArray.reverse();
+      console.log(reverseTeachers);
+      //includes(): Checks if an array includes a certain value. // return true or false
+      const name = teachers.includes("issa", 0);
+      console.log(name);
+      //toString(): Returns a string representing the array and its elements.// so it return all the array elemnts as a string without the []
+      const ArrayString = teachers.toString();
+      console.log(ArrayString);
+
+      //map(): Creates a new array with the results of calling a function for every array element.
+      const teacher = ["dania", "mohammad", "ss"];
+      const newArr1 = teacher.map((name) => name.toUpperCase());
+      console.log(newArr1);
+      const Numbers = [1, 2, 3, 4];
+      const squares = Numbers.map((x) => x * x);
+      console.log(squares);
+      //The real magic of .reduce() is in its callback function, which you provide. On each iteration,
+      //   the return value of this function becomes the new accumulator for the next iteration.
+      const numbersw = [1, 2, 3, 4];
+      const sum = numbersw.reduce(
+        (accumulator, current) => accumulator + current,
+        0
+      );
+      console.log(sum);
+      //The sort() method in JavaScript is used to sort the elements of an array in-place, meaning it modifies the original array.
+      //  By default, sort() arranges array elements as strings in ascending order.
+
+      const fruits = ["apple", "banana", "kiwi"];
+      fruits.sort();
+      console.log(fruits); // Output: ['apple', 'banana', 'kiwi']
+      const numberss = [5, 3, 9, 1, 4];
+      numberss.sort((a, b) => a - b);
+      console.log(numberss); // Output: [1, 3, 4, 5, 9]
+      //.find()
+      // What is it?
+      // The find method returns the first element that satisfies a given condition.
+
+      // Why use it?
+      // When you want to locate the first item that meets a particular condition, use find.
+      const numbersd = [1, 2, 3, 4, 5];
+      const firstEvenNumber = numbersd.find((num) => num % 2 === 0);
+
+      //What if there's no element that satisfies the condition?"
+      // It will return undefined.
+
+      // .filter()
+      // What is it?
+      // The filter method returns all the elements that satisfy a given condition in a new array.
+
+      // Why use it?
+      // When you want to create a new array containing all elements that meet a certain condition, use filter.
+      const numbersa = [1, 2, 3, 4, 5];
+      const evenNumbers = numbersa.filter((num) => num % 2 === 0);
+      console.log(evenNumbers);
+
+      // "Does filter modify the original array?"
+      // No, it returns a new array.
+      // "What if no elements satisfy the condition?"
+      // It will return an empty array.
+      // Comparison
+      // find	filter
+      // Returns	Single Element	New Array
+      // Multiple Matches	Only the first one	All of them
+      // No Matches	undefined	Empty Array
+    </script>
+  </body>
+</html>
